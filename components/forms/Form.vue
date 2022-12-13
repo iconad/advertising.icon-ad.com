@@ -2,16 +2,16 @@
   <div>
       <form @submit.prevent="submitForm" class="form">
 
-        <div class="form-element atos">
+        <div class="form-element">
           <input type="text" class="form-input" v-model="form.name" required placeholder="Full Name">
           <span class="text-sm text-red-500 font-semibold flex justify-start mt-1" v-if="errors && errors.name">{{ errors.name }}</span>
         </div>
         <!-- form element -->
 
-        <div class="form-element atos">
+        <div class="form-element">
           <client-only>
             <vue-tel-input
-              class="form-element atos"
+              class="form-element"
               :valid-characters-only="true"
               @input="onInput"
               v-bind="bindProps"
@@ -22,18 +22,18 @@
         </div>
         <!-- form element -->
 
-        <div class="form-element atos">
+        <div class="form-element">
           <input type="text" v-model="form.email" class="form-input" required placeholder="Email">
           <span class="text-sm text-red-500 font-semibold flex justify-start mt-1" v-if="errors && errors.email">{{ errors.email }}</span>
         </div>
         <!-- form element -->
 
-        <div class="form-element atos">
+        <div class="form-element">
           <textarea type="text" v-model="form.message" class="form-input" required placeholder="Message" rows="5"></textarea>
           <span class="text-sm text-red-500 font-semibold flex justify-start mt-1" v-if="errors && errors.message">{{ errors.message }}</span>
         </div>
-        <div v-if="!isLoading" class="form-element atos">
-          <input type="submit" class="form-button rainbow cursor-pointer hover:bg-opacity-100" value="Submit">
+        <div v-if="!isLoading" class="form-element">
+          <input type="submit" class="form-button rainbow w-full cursor-pointer hover:bg-opacity-100" value="Submit">
         </div>
         <!-- form element -->
 
@@ -48,7 +48,7 @@
 
 <script>
 
-  // import Atos from '~/utils/Atos'
+  // import from '~/utils/Atos'
 
   export default {
     data() {
@@ -172,16 +172,16 @@ export default {
 
 
   .vti__input:focus {
-    box-shadow: none !important;
-    color: white;
+    /* box-shadow: none !important; */
+    /* color: white; */
   }
 
   .vti__input {
-    color: white!important;
+    /* color: white!important; */
   }
 
   .vti__input-exclude {
-    color: rgba(74, 85, 104, 1)!important;
+    /* color: rgba(74, 85, 104, 1)!important; */
   }
 
   .vue-tel-input {
@@ -189,7 +189,6 @@ export default {
   }
 
   .vti__dropdown-list, .vti__dropdown.disabled, .vti__dropdown.open {
-    background-color: #333333!important;
     border: none!important;
   }
 
@@ -197,17 +196,22 @@ export default {
     width: 12px;
   }
   .vti__dropdown-list, .vti__dropdown.disabled, .vti__dropdown.open::-webkit-scrollbar-thumb {
-    border: 2px solid #ffffff2f;
+    background-color: rgba(209, 213, 219, 1)!important;
     border-radius: 5px;
+    box-shadow: 2px 4px 8px rgba(209, 213, 219, 0.5)!important;;
   }
 
 
   .vti__dropdown-item.highlighted {
-    background-color: #000000!important;
+    background-color: rgba(156, 163, 175, 1)!important;
+  }
+
+  .vti__dropdown {
+    border-radius: 5px;
   }
 
   .vti__dropdown:hover, .vti__dropdown:focus, .vti__dropdown:active {
-    background-color: #333333!important;
+    background-color: rgba(156, 163, 175, 1)!important;
     outline: none;
     box-shadow: none;
   }
@@ -217,6 +221,5 @@ export default {
   }
   input.vti__input {
     background: transparent!important;
-    color: white!important;
   }
 </style>

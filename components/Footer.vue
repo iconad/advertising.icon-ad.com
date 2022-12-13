@@ -2,18 +2,21 @@
   <div>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
       <div>
-        <h4 class="text-lg 3xl:text-xl font-semibold">
+
+        <div class="main-logo text-xxxs tracking-widest space-x-1 flex items-start justify-center md:justify-start font-medium">
+
+          <nuxt-link to="/">
+            <AssetsLogo options="w-24"/>
+          </nuxt-link>
+        </div>
+        <!-- Logo -->
+
+        <h4 class="text-lg 3xl:text-xl font-semibold leading-snug mt-5">
           <span class="block">Creativity </span>
           <span class="block">& Brand Experience </span>
           <span class="block">Reimagitned!</span>
         </h4>
 
-        <div class="main-logo text-xxxs tracking-widest space-x-1 flex items-start justify-center md:justify-start font-medium">
-            <nuxt-link to="/">
-                <AssetsLogo options="w-20 h-20"/>
-            </nuxt-link>
-        </div>
-        <!-- Logo -->
       </div>
       <!-- column -->
 
@@ -66,7 +69,7 @@
           <ul class="space-x-1 mt-2 text-sm md:text-sm 3xl:text-sm font-medium text-gray-800 flex items-center justify-center md:justify-start">
             <li>
               <a
-                class="hover:bg-theme-sky-dark transition-all cursor-pointer inline-block p-2 hover:text-white"
+                class="hover:bg-gray-900 transition-all cursor-pointer inline-block p-2 hover:text-white"
                 href="https://www.facebook.com/IconCreativeNetwork"
                 target="_blank"
                 rel="noreferrer"
@@ -76,7 +79,7 @@
             </li>
             <li>
               <a
-                class="hover:bg-theme-sky-dark transition-all cursor-pointer inline-block p-2 hover:text-white"
+                class="hover:bg-gray-900 transition-all cursor-pointer inline-block p-2 hover:text-white"
                 href="https://www.linkedin.com/company/icon-advertising-&-design-fz-llc/"
                 target="_blank"
                 rel="noreferrer"
@@ -86,7 +89,7 @@
             </li>
             <li>
               <a
-                class="hover:bg-theme-sky-dark transition-all cursor-pointer inline-block p-2 hover:text-white"
+                class="hover:bg-gray-900 transition-all cursor-pointer inline-block p-2 hover:text-white"
                 href="https://vimeo.com/user20802083"
                 target="_blank"
                 rel="noreferrer"
@@ -96,7 +99,7 @@
             </li>
             <li>
               <a
-                class="hover:bg-theme-sky-dark transition-all cursor-pointer inline-block p-2 hover:text-white"
+                class="hover:bg-gray-900 transition-all cursor-pointer inline-block p-2 hover:text-white"
                 href="https://www.behance.net/icon-ad"
                 target="_blank"
                 rel="noreferrer"
@@ -106,7 +109,7 @@
             </li>
             <li>
             <a
-              class="hover:bg-theme-sky-dark transition-all cursor-pointer inline-block p-2 hover:text-white"
+              class="hover:bg-gray-900 transition-all cursor-pointer inline-block p-2 hover:text-white"
               href="https://www.pinterest.com/iconadvertising"
               target="_blank"
               rel="noreferrer"
@@ -123,11 +126,11 @@
 
     <hr class="h-1 bg-theme-gray-dark my-10" />
 
-    <div class="copyright flex-col md:flex-row flex items-start md:items-center justify-between text-sm">
-      <p class="order-last md:order-first">© All rights reserved by ICON™ Advertising LLC – Also known as ICON™ Media Solutions 2022. </p>
+    <div class="copyright flex-col md:flex-row flex items-center justify-between text-sm">
+      <p class="order-last md:order-first text-center md:text-left">© All rights reserved by ICON™ Advertising LLC – Also known as ICON™ Media Solutions 2022. </p>
       <ul class="font-medium order-first md:order-last mb-2">
         <li>
-          <nuxt-link to="/" class="theme-link"> Privacy & Policy </nuxt-link>
+          <nuxt-link to="/privacy-policy" class="theme-link"> Privacy & Policy </nuxt-link>
         </li>
       </ul>
     </div>

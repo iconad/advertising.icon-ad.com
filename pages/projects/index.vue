@@ -1,28 +1,32 @@
 <template>
   <div>
 
-    <section class="projects-carousel relative">
+    <section class="projects-carousel relative" v-if="carousel.length != 0">
       <AdvertisingProjectSelectedProjectsCarousel :projects="carousel" />
     </section>
     <!-- projects carousel -->
 
-    <div class="projects-main mt-20 lg:my-32">
+    <div class="projects-main" :class="carousel.length != 0 ? 'mt-20 mb-20 lg:mb-32' : 'mt-[11rem] mb-20 lg:mb-32' ">
 
       <div class="theme-container">
 
         <div class="projects-filter lg:flex items-center justify-center space-y-3 lg:space-y-0 lg:space-x-10 bg-gray-100 w-full rounded-xl mx-auto p-5">
 
+
+
           <div class="text-lg w-full border-b border-gray-300 pb-3">
-            <select @change="onServiceChange()" v-model="selectedService" class="bg-transparent w-full focus:outline-none">
+            <select @change="onFilterUpdate()" v-model="selectedExpertie" class="bg-transparent w-full focus:outline-none">
               <option value="0" selected> Expertise </option>
-              <option v-for="(service, i) in services" :key="i" :value="service.name" v-html="service.name"></option>
+              <option v-for="(expert, i) in expertise" :key="i" :value="expert.name" v-html="removeHash(expert.name)"></option>
+
             </select>
           </div>
 
+
           <div class="text-lg w-full lg:border-b border-gray-300 lg:pb-3">
-            <select v-model="selectedExpertie" class="bg-transparent w-full focus:outline-none">
-              <option value="0" selected> Categories </option>
-              <option v-for="(expert, i) in expertise" :key="i" :value="expert.id" v-html="expert.name"></option>
+            <select @change="onFilterUpdate()" v-model="selectedIndustry" class="bg-transparent w-full focus:outline-none">
+              <option value="0" selected> Industry </option>
+              <option v-for="(industry, i) in industries" :key="i" :value="industry.name" v-html="industry.name"></option>
             </select>
           </div>
 
@@ -33,7 +37,7 @@
         </div>
         <!-- projects filter -->
 
-        <div class="projects mt-20">
+        <div v-if="projects.length != 0" class="projects mt-20">
           <!-- <div class="projects-masonry-grid gap-16 grid grid-cols-2 grid-flow-row"> -->
             <client-only>
               <masonry :cols="{default: 2, 920: 1}" :gutter="{default: '50px', 1120: '20px', 880: '50px'}" >
@@ -55,6 +59,10 @@
           <!-- projects-masonry-grid -->
         </div>
         <!-- projects -->
+
+        <div v-else class="h-[40vh] flex items-center justify-center">
+          <p class="text-lg font-semibold opacity-50">0 Projects found!</p>
+        </div>
 
         <client-only>
           <infinite-loading v-if="projects.length" spinner="bubbles" @infinite="infiniteScroll"></infinite-loading>
@@ -78,6 +86,7 @@ export default {
   data() {
     return {
       projects: [],
+      selectedIndustry: 0,
       selectedService: 0,
       selectedExpertie: 0,
       page: 0,
@@ -94,20 +103,21 @@ export default {
 
   methods: {
 
+
+    removeHash(title) {
+      return title.replace("#", "")
+    },
+
     goTo(slug) {
       this.$router.push({path: `/projects${slug}`});
     },
 
-    onExpertieChange() {
-      this.getProjectsWithPagination()
-    },
-
-    onServiceChange() {
+    onFilterUpdate() {
       this.getProjectsWithPagination()
     },
 
     getProjectsWithPagination () {
-      this.$axios.$get(`/all-projects?_format=json&service=${this.selectedService}&expertie=${this.selectedExpertie}`).then(resp => {
+      this.$axios.$get(`/all-projects?_format=json&subsidiary=0&industriy=${this.selectedIndustry}&expertises=${this.selectedExpertie}`).then(resp => {
           this.projects = resp;
         })
         .catch(err => {
@@ -121,7 +131,7 @@ export default {
 
         this.page++;
 
-        this.$axios.$get(`/all-projects?_format=json&page=${this.page}`).then(resp => {
+        this.$axios.$get(`/all-projects?_format=json&subsidiary=0&industriy=${this.selectedIndustry}&expertises=${this.selectedExpertie}&page=${this.page}`).then(resp => {
           if (resp.length > 1) { // check if any left
             resp.forEach(item => this.projects.push(item));
             $state.loaded();
@@ -141,16 +151,18 @@ export default {
 
   async asyncData({ $axios, store }) {
 
-    const carousel = await $axios.$get(`/projects/projects-carousel`)
-    const projects = await $axios.$get(`/all-projects?_format=json&page=0`)
+    const carousel = await $axios.$get(`/projects/home/slides/advertising`)
+    const projects = await $axios.$get(`/all-projects?_format=json&page=0&subsidiary=0`)
     const expertise = await $axios.$get(`/expertises`)
+    const industries = await $axios.$get(`/industries-list`)
     const services = await $axios.$get(`/all-services`)
 
       return {
         carousel,
         projects,
         expertise,
-        services
+        services,
+        industries
       }
     }
 

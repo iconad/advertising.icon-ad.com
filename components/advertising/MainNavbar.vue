@@ -1,11 +1,11 @@
 <template>
-    <div class="fixed top-[2.40rem] lg:top-10 left-0 bg-white w-full z-10">
+    <div class="main-navbar fixed top-[3rem] bg-white left-0 w-full z-50">
         <div class="theme-container main-navbar relative z-10">
             <div class="flex items-center justify-between h-auto lg:h-16">
 
                 <div class="main-logo text-xxxs tracking-widest space-x-1 flex items-start font-medium">
                     <nuxt-link to="/">
-                        <AssetsLogo options="w-16 h-16"/>
+                        <AssetsLogo options="w-[6rem] h-16"/>
                     </nuxt-link>
                 </div>
                 <!-- Logo -->
@@ -21,24 +21,15 @@
                   </div>
 
                   <ul v-if="isMenu" class="main-navbar_navbar_menu md:flex items-center uppercase tracking-wider space-x-0 md:space-x-10 space-y-8 md:space-y-0 text-gray-800 md:text-black">
-                      <li class="main-navbar_navbar_menu_li text-2xl lg:text-sm">
+                      <li class="lg:text-base">
                           <nuxt-link to="/">Home</nuxt-link>
                       </li>
-                      <li class="main-navbar_navbar_menu_li text-2xl lg:text-sm">
-                          <nuxt-link to="/about">About Us</nuxt-link>
-                      </li>
-                      <li class="main-navbar_navbar_menu_li text-2xl lg:text-sm">
+                      <li class="main-navbar_navbar_menu_li lg:text-base">
                           <nuxt-link to="/projects">Work</nuxt-link>
                       </li>
-                      <li class="main-navbar_navbar_menu_li text-2xl lg:text-sm">
-                          <nuxt-link to="/services">Expertise</nuxt-link>
+                      <li class="main-navbar_navbar_menu_li lg:text-base">
+                          <nuxt-link to="/expertise">Expertise</nuxt-link>
                       </li>
-                      <!-- <li class="main-navbar_navbar_menu_li">
-                          <nuxt-link to="/coming-soon">Clients</nuxt-link>
-                      </li>
-                      <li class="main-navbar_navbar_menu_li">
-                          <nuxt-link to="/coming-soon">Ideas</nuxt-link>
-                      </li> -->
                   </ul>
                   <!-- navbar menu -->
 
@@ -47,7 +38,7 @@
             </div>
         </div>
         <!-- main navbar -->
-        <UtilsRainbowBar colors="from-theme-sky via-theme-purple to-theme-pink w-full" />
+        <UtilsRainbowBar id="UtilsRainbowBar" colors="from-theme-sky via-theme-purple to-theme-pink w-full" />
     </div>
 </template>
 

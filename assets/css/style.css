@@ -33,6 +33,9 @@ body {
 .main-navbar_navbar_menu_li {
   @apply block border-b-2 border-transparent hover:border-gray-800 font-extrabold md:font-normal;
 }
+.main-navbar_navbar_menu_li-active {
+  @apply md:font-semibold;
+}
 
 .main-navbar_navbar_menu_li:last-child {
   @apply pr-0;
@@ -40,7 +43,7 @@ body {
 
 
 .rainbow-text-ad {
-  @apply font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-theme-sky via-theme-purple to-theme-pink;
+  @apply font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-theme-sky via-theme-purple to-theme-red;
 }
 
 .rainbow-text-digital {
@@ -89,7 +92,7 @@ body {
 }
 
 .form-input {
-  @apply bg-transparent p-5 w-full focus:outline-none bg-white bg-theme-gray-dark bg-opacity-70 focus:bg-opacity-100 rounded;
+  @apply bg-transparent px-5 py-3 w-full focus:outline-none bg-gray-300 bg-opacity-70 focus:bg-opacity-100 rounded-lg;
 }
 
 .form-input:active {
@@ -97,11 +100,11 @@ body {
 }
 
 .form-button {
-  @apply bg-transparent px-5 py-4 w-48 focus:outline-none bg-opacity-70 focus:bg-opacity-100 transition-all;
+  @apply bg-transparent px-5 py-4 w-full focus:outline-none bg-opacity-70 focus:bg-opacity-100 transition-all;
 }
 
 .form-button.rainbow {
-  @apply bg-gradient-to-r from-theme-red via-theme-pink to-theme-red hover:from-theme-pink hover:via-theme-red hover:to-theme-pink;
+  @apply text-white font-medium rounded-xl bg-gradient-to-r from-theme-red via-theme-pink to-theme-purple;
 }
 
 .text-shadow-1 {
@@ -159,4 +162,35 @@ body {
 
 .storyteller-ani {
   @apply text-gray-100;
+}
+
+
+.nuxt-link-exact-active.nuxt-link-active {
+  @apply font-semibold;
+}
+
+.white-bg-content h1, .white-bg-content h2, .white-bg-content h3, .white-bg-content h4, .white-bg-content h5, .white-bg-content h6 {
+
+  @apply mb-2;
+
+}
+
+.white-bg-content {
+  @apply space-y-5;
+}
+
+.white-bg-content h1{
+  @apply text-2xl md:text-3xl;
+}
+
+.white-bg-content h2{
+  @apply text-xl md:text-2xl;
+}
+
+.white-bg-content p{
+  @apply text-base;
+}
+
+.white-bg-content ul{
+  @apply list-disc ml-4;
 }

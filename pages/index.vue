@@ -1,69 +1,75 @@
 <template>
   <div>
 
-    <ChooseSite />
-
     <section id="coverSection">
         <AdvertisingFrontCover />
     </section>
     <!-- cover section -->
 
 
-    <section id="secondSection" class="bg-black text-white">
-      <div class="flex items-center theme-container section-screen-height section-screen-height_90 justify-center text-center">
+    <section id="secondSection" class="bg-black text-white relative">
+
+      <div class="absolute bottom-0 right-0 w-full lg:w-[70%]">
+        <AssetsIconWhiteBig options="w-full h-full" />
+      </div>
+
+
+      <div class="flex items-center theme-container h-[70vh] lg:h-screen-90 3xl:h-screen-70 justify-center text-center">
         <div class="space-y-5">
-          <h2 class="text-3xl lg:text-4xl uppercase font-semibold">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl uppercase font-semibold">
             <span class="block-span">Building brands for</span>
             <span class="block-span">more than 15 years</span>
           </h2>
-          <p class="w-full lg:w-[60%] mx-auto text-lg lg:text-xl font-light">We are a creative user (consumers, human beings) experience agency with 360 marketing services, providing high-end data-driven advertising campaigns, strategies, and storytelling that impact today’s consumers and different target audiences in a great level of understanding across the globe and MENA region.</p>
+          <p class="w-full lg:w-[60%] mx-auto text-sm md:text-lg lg:text-xl font-light">We are a creative user (consumers, human beings) experience agency with 360 marketing services, providing high-end data-driven advertising campaigns, strategies, and storytelling that impact today’s consumers and different target audiences in a great level of understanding across the globe and MENA region.</p>
         </div>
       </div>
     </section>
     <!-- second section -->
 
-    <section id="projectsSection">
+    <section id="projectsSection" class="relative">
       <div class="front-projects theme-container px-0 md:px-5 pt-16 md:pt-48">
           <AdvertisingProjectProjects :from="0" :to="projectsLimit" />
       </div>
       <!-- front projects -->
 
-      <div class="get-front-project md:py-48">
+      <div class="get-front-project md:py-24 theme-container">
           <AdvertisingProjectGetRandomProject />
       </div>
       <!-- front projects -->
 
-      <div class="front-projects theme-container md:pb-48 pt-24 lg:pt-0">
-          <AdvertisingProjectProjects :from="4" :to="projectsLimit" />
+      <div class="front-projects theme-container pt-24 lg:pt-0">
+          <AdvertisingProjectProjects :from="4" :to="2" />
       </div>
       <!-- front projects -->
+
+      <div class="absolute w-full h-96 pointer-events-none bg-gradient-to-t from-white to-transparent bottom-0 left-0 z-[3]"></div>
+
     </section>
     <!-- projects section -->
 
 
 
-    <section id="creativityUnlock" class="bg-black creativity-unlock overflow-hidden relative section-screen-height section-screen-height_100 flex items-center justify-center">
+    <section id="creativityUnlock" class="bg-white creativity-unlock overflow-hidden relative section-screen-height section-screen-height_100 flex items-center justify-center">
 
-      <img src="~assets/images/rainbowlines.svg" alt="image" id="rainbowlines" class="w-full absolute top-[1rem] lg:inset-0 left-[36rem] lg:left-32 2xl:left-10 h-full transform scale-x-[3.8] scale-y-[4.8] lg:scale-110 2xl:scale-150 ">
+      <div class="absolute w-full h-32 bg-gradient-to-b from-white to-transparent top-0 left-0 z-[3]"></div>
+      <div class="absolute w-full h-32 bg-gradient-to-t from-white to-transparent bottom-0 left-0 z-[3]"></div>
 
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="-133 -6 728 326" class=" w-[400%] lg:w-full absolute top-[300px] -left-[400px] lg:inset-0 h-full transform rotate-[82deg] lg:scale-130 opacity-50">
-        <path class="pathsvg" d="M 0 0 L -105 315 L -128 0 L 112 306 L 362 0 L 310 312 L 226 252 L 590 -1" stroke="#e63946" stroke-width="2" fill="none"/>
-      </svg> -->
+      <img src="~assets/images/rainbowlines.svg" alt="image" id="rainbowlines" class="w-full absolute top-[1rem] lg:inset-0 left-[36rem] lg:left-32 2xl:left-10 h-full transform scale-x-[3.8] scale-y-[4.8] lg:scale-125 2xl:scale-150 ">
 
-      <div class="theme-container unloak-creativity relative z-1 text-white text-center space-y-20">
-          <div class="lock-icon flex justify-center atos">
-            <AssetsLock options="w-10 h-10 transform hover:scale-125 transition-all duration-300" />
+      <div class="theme-container unloak-creativity relative z-1 text-black text-center space-y-20">
+          <div class="lock-icon flex justify-center">
+            <AssetsLock options="w-10 h-10 transform text-black hover:scale-125 transition-all duration-300" />
           </div>
           <!-- icon -->
           <div class="space-y-3">
-            <h3 class="text-4xl uppercase font-bold atos"> Unlock Creattivity </h3>
-            <p class="text-lg font-light atos">
+            <h3 class="text-4xl 2xl:text-6xl uppercase font-bold"> Unlock Creattivity </h3>
+            <p class="2xl:text-xl">
                <span class="block-span">Check more projects, unlock full case studies, and</span>
                <span class="block-span">showcase how we tackle projects</span>
             </p>
           </div>
           <div>
-            <nuxt-link to="/projects" class="black-button atos"> our work </nuxt-link>
+            <nuxt-link to="/projects" class="text-white bg-black uppercase font-medium rounded-full px-16 py-4 border-2 border-transparent hover:bg-white hover:border-black hover:text-black hover:font-bold"> our work </nuxt-link>
           </div>
       </div>
       <!-- unloak the creativity -->
@@ -77,22 +83,23 @@
     </section>
     <!-- expertises section end -->
 
-    <section id="Clients" class="clients-section bg-gradient-to-r from-theme-sky via-theme-purple to-theme-red py-32 3xl:py-64 space-y-16">
-        <h3 class="text-3xl lg:text-5xl 3xl:text-6xl uppercase text-white text-center font-bold w-5/6 lg:w-auto mx-auto" id="ourClientTitle"> our clients & partners </h3>
+    <section id="Clients" class="clients-section py-32 3xl:py-64">
         <AdvertisingClientClients :clients="clients" />
     </section>
     <!-- expertises section end -->
 
-    <section id="ContactSection" class="contact-section bg-black text-white py-32">
+    <section id="ContactSection" class="contact-section text-white py-32">
        <div class="theme-container">
-         <FormsContactUs
-          :data="{
-            title: 'have an',
-            title2: 'impact',
-            subtitle: 'Join the most powerful',
-            subtitle2: 'brands in the world.'
-         }"
-          />
+         <div class="bg-gray-100 rounded-2xl overflow-hidden px-5 md:px-10 lg:px-0 py-32">
+          <FormsContactUs
+            :data="{
+              title: 'have an',
+              title2: 'impact',
+              subtitle: 'Join the most powerful',
+              subtitle2: 'brands in the world.'
+          }"
+            />
+         </div>
        </div>
     </section>
     <!-- contact section end -->
@@ -114,7 +121,6 @@
 
 <script>
 
-import HomePage from '~/utils/HomePage'
 import setupSplits from '~/utils/setupSplits'
 import Atos from '~/utils/Atos'
 

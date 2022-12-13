@@ -12,7 +12,7 @@
     </template>
     <div v-else>
       <a :href="`${storageUrl}${asset.image_original}`" target="_blank">
-        <UtilsImage options="w-full atos" :mini="asset.image_mini" :image="asset.image_original" />
+        <UtilsImage options="w-full atos" :mini="asset.image_mini" :image="asset.image_hd" />
     </a>
     </div>
   </div>

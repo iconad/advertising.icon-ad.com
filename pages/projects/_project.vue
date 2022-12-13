@@ -6,8 +6,10 @@
         image: project.cover_original,
         mini: project.cover_image_mini,
         title: project.title,
+        case: project.case,
         client: project.client,
         services: project.services,
+        expertises: project.expertises,
         custom_client: project.custom_client
       }" />
     </section>
@@ -16,7 +18,7 @@
     <div class="project-content space-y-8">
 
       <!-- ===== Project Content ===== -->
-      <div class="flex theme-container-lg my-24 " v-if="project && project.detail">
+      <div class="flex theme-container-lg my-24" v-if="project && project.detail">
         <div class="w-full space-y-3" v-html="project.detail"></div>
       </div>
       <!-- paragraph -->
@@ -143,6 +145,7 @@ import Atos from '~/utils/Atos'
       projectsImages () {
 
         const bigArray = this.project.project_images.split(',')
+        const hdArray = this.project.project_images_hd.split(',')
         const miniArray = this.project.project_images_mini.split(',')
 
         let images = []
@@ -155,7 +158,8 @@ import Atos from '~/utils/Atos'
 
           }else{
 
-            const data = { big: element, mini: miniArray[0] }
+
+            const data = { big: element, hd: hdArray[0], mini: miniArray[0] }
             images.push(data)
             miniArray.shift()
           }

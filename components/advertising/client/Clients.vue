@@ -186,17 +186,17 @@
 <style>
 
 .hooper-indicator:hover, .hooper-indicator.is-active {
-  background-color: #272727;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  background-color: #272727!important;
+  width: 10px!important;
+  height: 10px!important;
+  border-radius: 50%!important;
 }
 
 .hooper-indicator {
-  background-color: #b8b8b8;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  background-color: #b8b8b8!important;
+  width: 10px!important;
+  height: 10px!important;
+  border-radius: 50%!important;
 }
 
 

@@ -2,7 +2,7 @@
   <div>
     <div class="grid grid-cols-2 gap-10">
       <div v-for="(project, i) in projects" :key="i">
-        <AdvertisingProject size="small" :project="project"/>
+        <AdvertisingProject size="small" height="h-96" :project="project"/>
       </div>
     </div>
   </div>

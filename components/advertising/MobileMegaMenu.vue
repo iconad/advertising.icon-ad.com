@@ -1,7 +1,7 @@
 <template>
     <div class="main-navbar fixed top-0 bg-white left-0 w-full z-50">
         <div class="theme-container main-navbar relative z-10">
-            <div class="flex items-center justify-between h-auto lg:h-16">
+            <div class="flex items-center justify-between h-16">
 
                 <div class="main-logo text-xxxs tracking-widest space-x-1 flex items-start font-medium">
                     <nuxt-link to="/">
@@ -113,22 +113,22 @@ export default {
         {
           name: 'branding',
           link: false,
-          active: true,
+          active: false,
           nested: [
             {
               name: 'home',
               external: true,
-              link: 'https://brand.icon-ad.com',
+              link: 'https://branding.icon-ad.com',
             },
             {
               name: 'work',
               external: true,
-              link: 'https://brand.icon-ad.com/projects',
+              link: 'https://branding.icon-ad.com/projects',
             },
             {
               name: 'expertise',
               external: true,
-              link: 'https://brand.icon-ad.com/expertise',
+              link: 'https://branding.icon-ad.com/expertise',
             }
           ]
         },

@@ -3,7 +3,7 @@
     :style="`background: url(http://drupal.icon-ad.com${project.cover}) no-repeat center center / cover`">
         <div class="text-white bg-black bg-opacity-60 absolute inset-0 flex items-center justify-center text-center">
             <div class="theme-container">
-                <h2 class="text-4xl lg:text-6xl 3xl:text-7xl font-semibold capitalize">{{project.title}}</h2>
+                <h2 class="text-4xl lg:text-4xl 3xl:text-7xl font-semibold capitalize" v-html="project.title"></h2>
                 <p class="mt-5 mb-10 text-lg 3xl:text-xl">
                   <template v-if="project.client">
                   {{project.client}}

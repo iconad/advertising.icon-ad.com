@@ -194,3 +194,10 @@ body {
 .white-bg-content ul{
   @apply list-disc ml-4;
 }
+
+.white-bg-content ol{
+  @apply list-decimal ml-4;
+}
+.white-bg-content li{
+  @apply space-y-3;
+}

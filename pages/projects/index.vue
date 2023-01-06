@@ -46,8 +46,8 @@
                 <UtilsProjectImage options="bg-gray-100 w-full object-cover rounded-2xl overflow-hidden" :mini="project.image_mini" :image="project.large_thumb" />
 
                 <div class="mt-5 space-y-3 px-5 pt-3 pb-8 w-full lg:w-3/4">
-                  <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold uppercase">
-                    <nuxt-link :to="`/projects${project.slug}`"> {{ project.title }} </nuxt-link>
+                  <h2 class="text-xl md:text-2xl 2xl:text-3xl font-semibold uppercase">
+                    <nuxt-link :to="`/projects${project.slug}`" v-html="project.title"> </nuxt-link>
                   </h2>
                   <!-- <div v-html="project.body" class="text-sm md:text-base opacity-80"></div> -->
                 </div>
@@ -65,7 +65,10 @@
         </div>
 
         <client-only>
-          <infinite-loading v-if="projects.length" spinner="bubbles" @infinite="infiniteScroll"></infinite-loading>
+          <infinite-loading v-if="projects.length" @infinite="infiniteScroll">
+            <div slot="spinner">Loading...</div>
+            <div slot="no-more">The End!</div>
+          </infinite-loading>
         </client-only>
 
 

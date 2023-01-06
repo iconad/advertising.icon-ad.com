@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
       <div>
 
@@ -14,7 +15,7 @@
         <h4 class="text-lg 3xl:text-xl font-semibold leading-snug mt-5">
           <span class="block">Creativity </span>
           <span class="block">& Brand Experience </span>
-          <span class="block">Reimagitned!</span>
+          <span class="block">Reimagined!</span>
         </h4>
 
       </div>
@@ -24,16 +25,16 @@
         <h4 class="text-lg 3xl:text-xl font-semibold">Our Subsidiaries</h4>
         <ul class="space-y-1 mt-2 text-sm md:text-sm 3xl:text-sm font-medium text-gray-800">
           <li>
-            <nuxt-link to="/" class="theme-link">ICON Advertising LLC</nuxt-link>
+            <a href="https://advertising.icon-ad.com" class="theme-link">ICON Advertising</a>
           </li>
           <li>
-            <a href="digital.icon-ad.com" class="theme-link">ICON Digital</a>
+            <a href="https://digital.icon-ad.com" class="theme-link">ICON Digital</a>
           </li>
           <li>
-            <nuxt-link to="/coming-soon" class="theme-link">BrandingStudio</nuxt-link>
+            <a href="https://branding.icon-ad.com" class="theme-link">BrandingStudio</a>
           </li>
           <li>
-            <nuxt-link to="/coming-soon" class="theme-link">ICON Plus</nuxt-link>
+            <a href="https://plus.icon-ad.com" class="theme-link">ICON Plus</a>
           </li>
         </ul>
       </div>
@@ -42,8 +43,8 @@
       <div>
         <h4 class="text-lg 3xl:text-xl font-semibold">Headquarters</h4>
         <p class="mt-2 text-sm md:text-sm 3xl:text-sm font-medium text-gray-800">
-          <span class="block">Block A, Office 301</span>
-          <span class="block">Metha Plaza Building</span>
+          <span class="block">Office 306</span>
+          <span class="block">Spectrum Building</span>
           <span class="block">Oud Metha, Dubai</span>
           <span class="block">United Arab Emirates.</span>
         </p>
@@ -61,7 +62,7 @@
           </p>
         </div>
         <div class="space-y-2">
-          <h4 class="text-lg 3xl:text-xl font-semibold">Follow us</h4>
+          <h4 class="text-lg 3xl:text-xl font-semibold">Follow Us</h4>
           <p class="mt-2 text-sm md:text-sm 3xl:text-sm font-medium text-gray-800">
             <span class="block">We post amazing</span>
             <span class="block">content on our platforms</span>
@@ -127,19 +128,18 @@
     <hr class="h-1 bg-theme-gray-dark my-10" />
 
     <div class="copyright flex-col md:flex-row flex items-center justify-between text-sm">
-      <p class="order-last md:order-first text-center md:text-left">© All rights reserved by ICON™ Advertising LLC – Also known as ICON™ Media Solutions 2022. </p>
+      <p class="order-last md:order-first text-center md:text-left">© All rights reserved by ICON 2023. </p>
       <ul class="font-medium order-first md:order-last mb-2">
         <li>
-          <nuxt-link to="/privacy-policy" class="theme-link"> Privacy & Policy </nuxt-link>
+          <a href="https://icon-ad.com/privacy-policy" class="theme-link"> Privacy & Policy </a>
         </li>
       </ul>
     </div>
 
   </div>
+
 </template>
 
 <script>
-  export default {
-
-  }
+  export default {}
 </script>

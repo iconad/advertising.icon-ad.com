@@ -25,7 +25,7 @@
         <span class="atos block-span">and so many more!</span>
       </div>
 
-      <div class="atos w-full md:w-1/2 relative z-1">
+      <div class="w-full md:w-1/2 relative z-1">
         <form class="newletter-form text-black" @submit.prevent="submitForm">
           <div class="flex items-center" v-if="!isLoading">
             <input required type="text" v-model="email" class="text-gray-900 p-4 w-full focus:outline-none bg-white focus:bg-gray-100">

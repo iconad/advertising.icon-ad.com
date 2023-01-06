@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-[60vh] sm:h-[70vh] lg:h-screen 2xl:h-[60vh] w-full flex items-center font-black relative text-center md:text-left">
+    <div class="w-full h-[60vh] sm:h-[70vh] lg:h-screen 3xl:h-[60vh] w-full flex items-center font-black relative text-center md:text-left">
         <div class="px-5 w-full space-y-10 lg:space-y-20">
 
               <div class="theme-container">

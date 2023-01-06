@@ -1,9 +1,9 @@
 <template>
   <div class="bg-black">
 
-    <section id="experiese-cover" class="h-screen-70 3xl:h-screen-50 flex items-center justify-center text-white">
+    <section id="experiese-cover" class="h-[45vh] md:h-screen-70 3xl:h-screen-50 flex items-center justify-center text-white">
       <div class="video relative">
-        <h1 class="text-5xl lg:text-7xl font-bold text-center w-full absolute top-32 left-0" v-if="page">{{page[0].detail}}</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-bold text-center w-full absolute top-[3rem] sm:top-24 md:top-32 left-0" v-if="page">{{page[0].detail}}</h1>
         <video width="800" height="240" preload="yes" autoplay loop poster="https://drupal.icon-ad.com/sites/default/files/2022-11/Screen%20Shot%202022-11-28%20at%205.46.59%20PM.png" muted id="vid" class="select:outline-none focus:outline-none">
           <source src="~/assets/video/reimagined.webm" type="video/webm">
           <source src="~/assets/video/reimagined.mp4" type="video/mp4">
@@ -37,8 +37,8 @@
                 </div>
                 <!-- content side -->
 
-                <div class="image-project-side w-full relative overflow-hidden">
-                  <UtilsImage :mini="expertie.image_mini" :image="expertie.image" options="w-full object-cover object-bottom rounded-3xl" />
+                <div class="image-project-side w-full relative overflow-hidden" :style="`height: ${expertie.height}rem`">
+                  <UtilsImage @click="goTo(expertie.link)" :mini="expertie.image_mini" :image="expertie.image" options="w-full object-cover object-bottom rounded-3xl" :height="expertie.height"/>
                 </div>
                 <!-- image side -->
             </div>

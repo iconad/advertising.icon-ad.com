@@ -20,7 +20,7 @@
             <span class="block-span">Building brands for</span>
             <span class="block-span">more than 15 years</span>
           </h2>
-          <p class="w-full lg:w-[60%] mx-auto text-sm md:text-lg lg:text-xl font-light">We are a creative user (consumers, human beings) experience agency with 360 marketing services, providing high-end data-driven advertising campaigns, strategies, and storytelling that impact today’s consumers and different target audiences in a great level of understanding across the globe and MENA region.</p>
+          <p class="w-full lg:w-[60%] mx-auto text-sm md:text-lg lg:text-xl font-light">We are a creative user (consumer, human beings) experience agency with 360 marketing services, providing high-end data-driven advertising campaigns, strategies, and storytelling that impact today’s consumers and different target audiences in a great level of understanding across the globe and MENA region.</p>
         </div>
       </div>
     </section>
@@ -62,7 +62,7 @@
           </div>
           <!-- icon -->
           <div class="space-y-3">
-            <h3 class="text-4xl 2xl:text-6xl uppercase font-bold"> Unlock Creattivity </h3>
+            <h3 class="text-4xl 2xl:text-6xl uppercase font-bold"> Unlock Creativity </h3>
             <p class="2xl:text-xl">
                <span class="block-span">Check more projects, unlock full case studies, and</span>
                <span class="block-span">showcase how we tackle projects</span>

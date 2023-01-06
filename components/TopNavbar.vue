@@ -1,7 +1,7 @@
 <template>
     <div id="topnavbar" class="bg-black text-white top-navbar fixed w-full left-0 top-0 z-50">
         <div class="theme-container">
-            <div class="flex items-center justify-end md:justify-between">
+            <div class="flex items-center justify-end lg:justify-between">
 
               <div class="join-us tracking-widest space-x-3 hidden lg:flex items-start text-sm lg:text-xs 2xl:text-sm">
                   <a href="mailto:info@icon-ad.com" class="block theme-link font-medium">info@icon-ad.com</a>
@@ -28,49 +28,49 @@ export default {
   data() {
     return {
       nav:[
-      {
-        name: 'about',
-        link: '/about',
-        active: false,
-        external: false
-      },
-      {
-        name: 'advertising',
-        link: 'https://advertising.icon-ad.com',
-        active: true,
-        external: true
-      },
-      {
-        name: 'digital',
-        link: 'https://digital.icon-ad.com',
-        active: false,
-        external: true
-      },
-      {
-        name: 'branding',
-        link: 'https://branding.icon-ad.com',
-        active: false,
-        external: true
-      },
-      {
-        name: 'plus',
-        link: 'https://plus.icon-ad.com',
-        active: false,
-        external: true
-      },
-      {
-        name: 'clients',
-        link: '/clients',
-        active: false,
-        external: false
-      },
-      {
-        name: 'ideas',
-        link: '/ideas',
-        active: false,
-        external: false
-      },
-    ]
+    {
+      name: 'about',
+      link: 'https://icon-ad.com/about',
+      active: false,
+      external: true
+    },
+    {
+      name: 'advertising',
+      link: 'https://advertising.icon-ad.com',
+      active: true,
+      external: true
+    },
+    {
+      name: 'digital',
+      link: 'https://digital.icon-ad.com',
+      active: false,
+      external: true
+    },
+    {
+      name: 'branding',
+      link: 'https://branding.icon-ad.com',
+      active: false,
+      external: true
+    },
+    {
+      name: 'plus',
+      link: 'https://plus.icon-ad.com',
+      active: false,
+      external: true
+    },
+    {
+      name: 'clients',
+      link: 'https://icon-ad.com/clients',
+      active: false,
+      external: true
+    },
+    {
+      name: 'ideas',
+      link: 'https://icon-ad.com/ideas',
+      active: false,
+      external: true
+    },
+  ]
     }
   },
 

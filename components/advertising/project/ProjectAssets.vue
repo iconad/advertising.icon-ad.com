@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-6 gap-2 md:gap-4">
       <div :class="`h-full row-span-${asset.row} ${asset.col}`" :key="index" v-for="(asset, index) in assets">
-          <AdvertisingProjectAsset :asset="asset" />
+        <AdvertisingProjectAsset :asset="asset" />
       </div>
     </div>
   </div>

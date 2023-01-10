@@ -1,5 +1,15 @@
 <template>
   <div class="bg-gray-200 rounded-xl md:rounded-3xl overflow-hidden">
+
+    <client-only>
+      <vue-easy-lightbox
+        :visible="visible"
+        :imgs="imgs"
+        :index="index"
+        @hide="handleHide"
+      ></vue-easy-lightbox>
+    </client-only>
+
     <!-- <div class="hidden">{{asset.type}}</div> -->
     <template v-if="asset.type.toLowerCase() == 'video'">
       <client-only>
@@ -11,9 +21,9 @@
       </client-only>
     </template>
     <div v-else>
-      <a :href="`${storageUrl}${asset.image_hd}`" target="_blank">
+      <div @click="showLightbox(`${storageUrl}${asset.image_hd}`)" target="_blank" class="cursor-pointer">
         <UtilsImage options="w-full atos" :mini="asset.image_mini" :image="asset.image_hd" />
-    </a>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +33,9 @@
     props: ['asset'],
     data() {
       return {
+        imgs: '',
+        visible: false,
+        index: 0,
         options: {
           autoplay: true,
           muted: true,
@@ -34,6 +47,18 @@
           color: "000000",
           title: false
         },
+      }
+    },
+    methods: {
+      showLightbox(url) {
+        this.imgs = url;
+        this.show()
+      },
+      show() {
+        this.visible = true
+      },
+      handleHide() {
+        this.visible = false
       }
     },
     computed: {

@@ -68,6 +68,19 @@
 <script>
   export default {
 
+    head: {
+      title: 'Creative Design Agency, Motion Graphic, 2d & 3d Animation Dubai | ICON Advertising',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'We offer a wide range of advertising services in Dubai from creative design, motion graphics to 2d & 3d animation to help your brand stand out among competitors.'
+        }
+      ],
+    },
+
     computed: {
       expertise () {
         return this.page[0].content;

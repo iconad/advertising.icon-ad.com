@@ -14,6 +14,15 @@
       }" />
     </section>
     <!-- cover -->
+      <!-- all props & events -->
+      <client-only>
+        <vue-easy-lightbox
+          :visible="visible"
+          :imgs="imgs"
+          :index="index"
+          @hide="handleHide"
+        ></vue-easy-lightbox>
+      </client-only>
 
     <div class="project-content space-y-8">
 
@@ -88,9 +97,9 @@
         <div class="inner w-full grid grid-cols-6 gap-2 md:gap-4">
           <div class="project image mb-8 h-full" :class="image.class ? image.class : 'col-span-6'" v-for="(image, i) in projectsImages" :key="i">
             <!-- {{ image.hd }} -->
-            <a :href="`${storageUrl}${image.hd}`" target="_blank" v-if="projectsImages != null">
+            <div @click="showLightbox(i)" target="_blank" v-if="projectsImages != null">
               <UtilsImage v-if="image.big" options="w-full rounded-3xl overflow-hidden" :mini="image.mini" :image="image.hd" />
-            </a>
+            </div>
 
           </div>
         </div>
@@ -229,6 +238,9 @@ import Atos from '~/utils/Atos'
     },
     data() {
       return {
+        imgs: '',
+        visible: false,
+        index: 0,
         relatedProjects: [],
         options: {
         autoplay:false,
@@ -240,6 +252,23 @@ import Atos from '~/utils/Atos'
         title:false
       },
       playerReady: false,
+      }
+    },
+
+    methods: {
+      showLightbox(index) {
+
+        this.imgs = this.projectsImages.map(e => `https://drupal.icon-ad.com${e.big}` );
+        this.index = index
+        this.show()
+      },
+      show() {
+        this.visible = true
+        document.body.classList.add('overflow-x-auto');
+      },
+      handleHide() {
+        this.visible = false
+        // document.body.classList.remove('fixed');
       }
     },
 
@@ -258,6 +287,8 @@ import Atos from '~/utils/Atos'
       const hdArray = this.project.project_images_hd.split(',')
       const bigArray = this.project.project_images.split(',')
       const miniArray = this.project.project_images_mini.split(',')
+
+      this.imgs = hdArray;
 
       let images = []
 
